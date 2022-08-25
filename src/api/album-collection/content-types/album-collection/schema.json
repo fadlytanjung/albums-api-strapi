@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "album_collections",
+  "info": {
+    "singularName": "album-collection",
+    "pluralName": "album-collections",
+    "displayName": "Album Collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "isPrivate": {
+      "type": "boolean",
+      "default": false
+    },
+    "photos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::photo.photo",
+      "mappedBy": "album_collections"
+    }
+  }
+}

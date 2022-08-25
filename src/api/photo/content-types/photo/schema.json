@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photos",
+  "info": {
+    "singularName": "photo",
+    "pluralName": "photos",
+    "displayName": "photo",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "url": {
+      "type": "text",
+      "required": true
+    },
+    "album_collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::album-collection.album-collection",
+      "inversedBy": "photos"
+    }
+  }
+}
